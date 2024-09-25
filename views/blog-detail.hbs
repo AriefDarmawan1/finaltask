@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Blog Page - Detail</title>
+    <link rel="stylesheet" href="../assets/css/blog.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/nav.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <ul class="navbar-ul">
+        <div class="navbar-left">
+          {{! <li>
+            <img src="../assets/img/dumbways.png" class="navbar-logo" />
+          </li> }}
+          <li>
+            <a href="/blog" class="navbar-link">Provinsi Dan Kabupaten</a>
+          </li>
+          {{! <li>
+            <a href="/blog" class="navbar-link active">Kabupaten</a>
+          </li>
+        </div>
+        <div class="navbar-right">
+          <li>
+            <a href="/contact" class="navbar-contact-btn">Contact</a>
+          </li> }}
+          <button id="hamburger-button" onclick="toggleHamburger()">
+            <i class="fa-solid fa-bars fa-2x"></i>
+          </button>
+        </div>
+      </ul>
+    </nav>
+    <div class="hamburger-container hide">
+      <a href="/" class="hamburger-nav-link">Provinsi</a>
+      <a href="/blog" class="hamburger-nav-link hamburger-active">Kabupaten</a>
+      <a href="/contact" class="hamburger-nav-link">Contact</a>
+    </div>
+
+    <div class="blog-detail">
+      <div class="blog-detail-container">
+        <h1>{{data.title}}</h1>
+        <div class="author">{{data.createdAt}}</div>
+        <p>Dibuat Oleh: {{data.user.name}}</p>
+        <p>Diresmikan pada: {{data.date}}</p>
+        <!-- Display the date -->
+        <img src="/uploads/{{data.image}}" alt="Blog Image" />
+        <p>{{data.content}}</p>
+
+        <!-- Display the skills if they exist -->
+        {{!-- <div>
+          <h4>Skills:</h4>
+          <ul>
+            {{#each data.skills}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div> --}}
+      </div>
+    </div>
+
+    <script src="../assets/js/nav.js"></script>
+  </body>
+</html>
